@@ -1,14 +1,16 @@
+var audio = document.createElement("audio");
+document.body.appendChild(audio);
+
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   if (changeInfo.hasOwnProperty("url")) {
-    console.log("tab #" + tabId + " changed URL to " + changeInfo.url);
+    audio.pause();
     var request = new XMLHttpRequest();
     request.open("GET", "http://cryptic-anchorage-3829.herokuapp.com/" + changeInfo.url, true);
     request.onload = function() {
-      console.log(this.status, this.response);
-    };
-    request.onerror = function() {
-      console.log(this.error, this);
-      debugger;
+      if (this.status == 200) {
+        audio.src = this.response;
+        audio.play();
+      }
     };
     request.send();
   }
