@@ -4,7 +4,11 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     var request = new XMLHttpRequest();
     request.open("GET", "http://cryptic-anchorage-3829.herokuapp.com/" + changeInfo.url, true);
     request.onload = function() {
-      console.log(this.response);
+      console.log(this.status, this.response);
+    };
+    request.onerror = function() {
+      console.log(this.error, this);
+      debugger;
     };
   }
 });
