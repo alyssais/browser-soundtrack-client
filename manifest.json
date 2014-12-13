@@ -10,6 +10,7 @@
   },
 
   "permissions": [
+    "tabs",
     "http://diffbot.com/"
   ],
   "browser_action": {
