@@ -6,7 +6,7 @@
   "version": "1.0",
 
   "permissions": [
-    "http://diffbot.com"
+    "http://diffbot.com/"
   ],
   "browser_action": {
     "default_icon": "icon.png",
