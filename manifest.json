@@ -11,7 +11,7 @@
 
   "permissions": [
     "tabs",
-    "http://diffbot.com/"
+    "http://cryptic-anchorage-3829.herokuapp.com/"
   ],
   "browser_action": {
     "default_icon": "icon.png",
