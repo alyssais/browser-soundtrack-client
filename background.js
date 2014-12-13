@@ -10,5 +10,6 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
       console.log(this.error, this);
       debugger;
     };
+    request.send();
   }
 });
