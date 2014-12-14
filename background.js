@@ -3,7 +3,7 @@ document.body.appendChild(audio);
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   if (changeInfo.hasOwnProperty("url")) {
-    chrome.notifications.clear(audio.src);
+    chrome.notifications.clear(audio.src, function() {});
     audio.pause();
     var request = new XMLHttpRequest();
     request.open("GET", "http://cryptic-anchorage-3829.herokuapp.com/" + changeInfo.url, true);
