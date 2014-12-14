@@ -10,7 +10,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
       if (this.status == 200) {
         audio.src = this.response;
         audio.play();
-        chrome.notifications.create("now playing", {
+        chrome.notifications.create(Math.random().toString(), {
           type: "basic",
           title: "Song Title",
           message: "Song Artist",
