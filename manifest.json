@@ -14,9 +14,5 @@
     "notifications",
     "http://cryptic-anchorage-3829.herokuapp.com/",
     "https://i.scdn.co/image/"
-  ],
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
-  }
+  ]
 }
