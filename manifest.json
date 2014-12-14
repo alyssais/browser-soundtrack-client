@@ -14,5 +14,11 @@
     "notifications",
     "http://cryptic-anchorage-3829.herokuapp.com/",
     "https://i.scdn.co/image/"
-  ]
+  ],
+  
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
 }
