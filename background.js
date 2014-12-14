@@ -10,7 +10,12 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
       if (this.status == 200) {
         audio.src = this.response;
         audio.play();
-        chrome.notifications.create(this.response, { title: "Now Playing", message: this.response });
+        chrome.notifications.create("now playing", {
+          type: "basic",
+          title: "Song Title",
+          message: "Song Artist",
+          iconUrl: "https://i.scdn.co/image/ac20df0f8ff65572239294c04c5c1c0e56940767"
+        }, function() {});
       }
     };
     request.send();
