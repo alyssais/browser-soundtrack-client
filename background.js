@@ -8,13 +8,14 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     request.open("GET", "http://cryptic-anchorage-3829.herokuapp.com/" + changeInfo.url, true);
     request.onload = function() {
       if (this.status == 200) {
-        audio.src = this.response;
+        var song = JSON.parse(this.response);
+        audio.src = song.audio_url;
         audio.play();
         chrome.notifications.create(Math.random().toString(), {
           type: "basic",
-          title: "Song Title",
-          message: "Song Artist",
-          iconUrl: "https://i.scdn.co/image/ac20df0f8ff65572239294c04c5c1c0e56940767"
+          title: song.title,
+          message: song.artist,
+          iconUrl: song.artwork_url
         }, function() {});
       }
     };
